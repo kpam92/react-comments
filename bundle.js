@@ -22561,7 +22561,7 @@ var Thread = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-md-12 thread' },
+        { className: 'col-md-12 ' },
         _react2.default.createElement(
           'div',
           { className: 'row comment-box' },
@@ -22572,7 +22572,7 @@ var Thread = function (_React$Component) {
             _react2.default.createElement(
               'span',
               null,
-              'rickAndMortyFan'
+              'User123'
             )
           ),
           _react2.default.createElement(
@@ -22594,7 +22594,7 @@ var Thread = function (_React$Component) {
         _react2.default.createElement('div', { className: 'col-md-2' }),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-10' },
+          { className: 'col-md-10 thread' },
           _react2.default.createElement(
             'div',
             { className: 'row' },

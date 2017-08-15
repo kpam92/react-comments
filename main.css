@@ -49,12 +49,13 @@ input[type="submit"] {
   clear: both;
 }
 
-/*styling*/
+/*main styling*/
 .padding-bottom {
   padding-bottom: 5px;
 }
+
 .main {
-  padding-top: 10px;
+  padding: 10px 0;
   background: aliceblue;
 }
 .thread {
@@ -62,8 +63,9 @@ input[type="submit"] {
 }
 .comment-box {
   padding: 20px;
-  /*border-left: 1px solid black;*/
 }
+
+/*user details*/
 
 .username {
   font-size: 18px;
@@ -71,12 +73,14 @@ input[type="submit"] {
 }
 
 .avatar {
-  width: 25px;
+  width: 40px;
   height: 25px;
-  background-image: url("http://res.cloudinary.com/dt5viyxyq/image/upload/v1502838506/pr_ytrhce.jpg");
+  background-image: url("http://res.cloudinary.com/dt5viyxyq/image/upload/v1502839355/pr_havnwk.jpg");
   background-size: cover;
-  margin-right: 0;
+  margin-bottom: 5px;
 }
+
+/*comment*/
 
 .comment {
   font-size: 15px;
@@ -89,4 +93,16 @@ input[type="submit"] {
 .add-comment button {
   background: #ffffff;
   padding: 5px;
+  border: 1px solid #b3c7d8;
+  border-radius: 4px;
+}
+
+input {
+  background: white;
+  margin-right: 5px;
+  padding: 8px;
+}
+
+form > button {
+  padding-left: 8px;
 }
