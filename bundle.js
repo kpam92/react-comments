@@ -22470,19 +22470,41 @@ var Thread = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Thread.__proto__ || Object.getPrototypeOf(Thread)).call(this, props));
 
-    _this.state = { commentComponent: 'no-show' };
+    _this.state = {
+      comments: _this.props.comments,
+      commentComponent: 'no-show',
+      currNewComment: ""
+    };
     _this.toggleComment = _this.toggleComment.bind(_this);
+    _this.addComment = _this.addComment.bind(_this);
 
     return _this;
   }
 
   _createClass(Thread, [{
+    key: 'updateComment',
+    value: function updateComment() {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState({ currNewComment: e.target.value });
+      };
+    }
+  }, {
     key: 'addComment',
-    value: function addComment() {}
+    value: function addComment(e) {
+      debugger;
+      e.preventDefault();
+      var newComments = this.state.comments;
+      newComments.push({ post: this.state.currNewComment, comments: [] });
+      this.setState({ comments: newComments });
+      this.setState({ currNewComment: "" });
+      this.setState({ commentComponent: 'no-show' });
+    }
   }, {
     key: 'renderComments',
     value: function renderComments() {
-      var comments = this.props.comments;
+      var comments = this.state.comments;
 
       if (comments.length < 1) {
         return;
@@ -22505,11 +22527,20 @@ var Thread = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement('input', null),
           _react2.default.createElement(
-            'button',
-            null,
-            '+'
+            'form',
+            { onSubmit: this.addComment },
+            _react2.default.createElement('input', {
+              value: this.state.currNewComment,
+              onChange: this.updateComment(),
+              className: 'input',
+              placeholder: 'new comment',
+              required: true }),
+            _react2.default.createElement(
+              'button',
+              null,
+              '+'
+            )
           )
         );
       }

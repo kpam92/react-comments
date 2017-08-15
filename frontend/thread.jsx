@@ -4,16 +4,32 @@ class Thread extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {commentComponent: 'no-show'}
+    this.state = {
+      comments: this.props.comments,
+      commentComponent: 'no-show',
+      currNewComment: ""
+    }
     this.toggleComment = this.toggleComment.bind(this);
+    this.addComment = this.addComment.bind(this);
 
   }
 
-  addComment(){
-
+  updateComment() {
+    return e => this.setState({currNewComment: e.target.value})
   }
+
+  addComment(e){
+    debugger;
+    e.preventDefault();
+    let newComments = this.state.comments;
+    newComments.push({post: this.state.currNewComment, comments:[]})
+    this.setState({comments: newComments});
+    this.setState({currNewComment: ""})
+    this.setState({commentComponent: 'no-show'})
+  }
+
   renderComments() {
-    const { comments } = this.props;
+    const { comments } = this.state;
     if (comments.length < 1) {
       return;
     }
@@ -32,8 +48,15 @@ class Thread extends React.Component {
     } else {
       return (
         <div>
-          <input></input>
-          <button>+</button>
+          <form onSubmit={this.addComment}>
+            <input
+              value={this.state.currNewComment}
+              onChange={this.updateComment()}
+              className="input"
+              placeholder="new comment"
+              required/>
+            <button>+</button>
+          </form>
         </div>
       )
     }
