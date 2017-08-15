@@ -33,7 +33,7 @@ class Thread extends React.Component {
       return;
     } else {
       return (
-        <div>
+        <div className="col-md-12">
           <form onSubmit={this.addComment}>
             <input
               value={this.state.currNewComment}
@@ -72,12 +72,22 @@ class Thread extends React.Component {
   render() {
 
     return(
-      <div>
-        User123
-        {this.props.post}
-        <button onClick={this.toggleComment}>Add comment</button>
-        {this.renderCommentInput()}
-        {this.renderComments()}
+      <div className='col-md-12'>
+        <div className="row">
+          <div className="col-md-12">
+            User123
+          </div>
+          <div className="col-md-2">
+            {this.props.post}
+          </div>
+          <button onClick={this.toggleComment}>Add comment</button>
+          {this.renderCommentInput()}
+        </div>
+        <div className="col-md-12">
+          <div className="row">
+            {this.renderComments()}
+          </div>
+        </div>
       </div>
     )
   }

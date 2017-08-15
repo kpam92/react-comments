@@ -22430,7 +22430,7 @@ var comments = [{ "post": 'test', comments: [] }, { "post": 'test2', comments: [
 var Main = function Main() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'container' },
     _react2.default.createElement(_thread2.default, { post: 'Test Post', comments: comments })
   );
 };
@@ -22510,7 +22510,7 @@ var Thread = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          null,
+          { className: 'col-md-12' },
           _react2.default.createElement(
             'form',
             { onSubmit: this.addComment },
@@ -22559,16 +22559,36 @@ var Thread = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
-        'User123',
-        this.props.post,
+        { className: 'col-md-12' },
         _react2.default.createElement(
-          'button',
-          { onClick: this.toggleComment },
-          'Add comment'
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            'User123'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-2' },
+            this.props.post
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: this.toggleComment },
+            'Add comment'
+          ),
+          this.renderCommentInput()
         ),
-        this.renderCommentInput(),
-        this.renderComments()
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-12' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            this.renderComments()
+          )
+        )
       );
     }
   }]);

@@ -7,7 +7,7 @@ const comments = [
 ]
 
 const Main = () => (
-  <div>
+  <div className="container">
     <Thread post="Test Post" comments={comments}/>
   </div>
 );
