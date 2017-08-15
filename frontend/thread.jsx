@@ -73,17 +73,19 @@ class Thread extends React.Component {
 
     return(
       <div className='col-md-12'>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row comment-box">
+          <div className="col-md-12 username padding-bottom">
             User123
           </div>
-          <div className="col-md-2">
+          <div className="col-md-12 padding-bottom">
             {this.props.post}
           </div>
-          <button onClick={this.toggleComment}>Add comment</button>
+          <div className="col-md-12 add-comment padding-bottom">
+            <button onClick={this.toggleComment}>Add comment</button>
+          </div>
           {this.renderCommentInput()}
         </div>
-        <div className="col-md-12">
+        <div className="col-md-10">
           <div className="row">
             {this.renderComments()}
           </div>

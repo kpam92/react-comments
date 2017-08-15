@@ -22427,11 +22427,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var comments = [{ "post": 'test', comments: [] }, { "post": 'test2', comments: [] }];
 
+var post = "I'm glad they never gave Rick the ability to roll himself, since that wouldn't be possible for a living pickle without appendages. It would have made the episode much less clever if he could simply roll out of the sun or roll towards the roach.";
+
 var Main = function Main() {
   return _react2.default.createElement(
     'div',
-    { className: 'container' },
-    _react2.default.createElement(_thread2.default, { post: 'Test Post', comments: comments })
+    { className: 'container main' },
+    _react2.default.createElement(_thread2.default, { post: post, comments: comments })
   );
 };
 
@@ -22562,27 +22564,31 @@ var Thread = function (_React$Component) {
         { className: 'col-md-12' },
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'row comment-box' },
           _react2.default.createElement(
             'div',
-            { className: 'col-md-12' },
+            { className: 'col-md-12 username padding-bottom' },
             'User123'
           ),
           _react2.default.createElement(
             'div',
-            { className: 'col-md-2' },
+            { className: 'col-md-12 padding-bottom' },
             this.props.post
           ),
           _react2.default.createElement(
-            'button',
-            { onClick: this.toggleComment },
-            'Add comment'
+            'div',
+            { className: 'col-md-12 add-comment padding-bottom' },
+            _react2.default.createElement(
+              'button',
+              { onClick: this.toggleComment },
+              'Add comment'
+            )
           ),
           this.renderCommentInput()
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-12' },
+          { className: 'col-md-10' },
           _react2.default.createElement(
             'div',
             { className: 'row' },

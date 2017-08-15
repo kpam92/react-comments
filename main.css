@@ -48,3 +48,29 @@ input[type="submit"] {
   display: block;
   clear: both;
 }
+
+/*styling*/
+.padding-bottom {
+  padding-bottom: 5px;
+}
+.main {
+  padding-top: 10px;
+  background: aliceblue;
+}
+
+.comment-box {
+  padding: 20px;
+  /*border-left: 1px solid black;*/
+}
+
+.username {
+  font-size: 18px;
+}
+
+.comment {
+  font-size: 15px;
+}
+
+.add-comment {
+  font-size: 12px;
+}
