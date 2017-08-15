@@ -22493,28 +22493,12 @@ var Thread = function (_React$Component) {
   }, {
     key: 'addComment',
     value: function addComment(e) {
-      debugger;
       e.preventDefault();
       var newComments = this.state.comments;
       newComments.push({ post: this.state.currNewComment, comments: [] });
       this.setState({ comments: newComments });
       this.setState({ currNewComment: "" });
       this.setState({ commentComponent: 'no-show' });
-    }
-  }, {
-    key: 'renderComments',
-    value: function renderComments() {
-      var comments = this.state.comments;
-
-      if (comments.length < 1) {
-        return;
-      }
-
-      var content = comments.map(function (comment) {
-        return _react2.default.createElement(Thread, { key: window.btoa(comment.post), post: comment.post, comments: comment.comments });
-      });
-
-      return content;
     }
   }, {
     key: 'renderCommentInput',
@@ -22553,6 +22537,21 @@ var Thread = function (_React$Component) {
       } else {
         this.setState({ commentComponent: 'no-show' });
       };
+    }
+  }, {
+    key: 'renderComments',
+    value: function renderComments() {
+      var comments = this.state.comments;
+
+      if (comments.length < 1) {
+        return;
+      }
+
+      var content = comments.map(function (comment) {
+        return _react2.default.createElement(Thread, { key: window.btoa(comment.post), post: comment.post, comments: comment.comments });
+      });
+
+      return content;
     }
   }, {
     key: 'render',

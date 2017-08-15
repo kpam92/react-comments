@@ -19,26 +19,12 @@ class Thread extends React.Component {
   }
 
   addComment(e){
-    debugger;
     e.preventDefault();
     let newComments = this.state.comments;
     newComments.push({post: this.state.currNewComment, comments:[]})
     this.setState({comments: newComments});
     this.setState({currNewComment: ""})
     this.setState({commentComponent: 'no-show'})
-  }
-
-  renderComments() {
-    const { comments } = this.state;
-    if (comments.length < 1) {
-      return;
-    }
-
-    const content = comments.map((comment) => (
-      <Thread key={window.btoa(comment.post)} post={comment.post} comments={comment.comments}/>
-    ));
-
-    return content;
   }
 
   renderCommentInput() {
@@ -68,6 +54,19 @@ class Thread extends React.Component {
     } else {
       this.setState({commentComponent: 'no-show'})
     };
+  }
+
+  renderComments() {
+    const { comments } = this.state;
+    if (comments.length < 1) {
+      return;
+    }
+
+    const content = comments.map((comment) => (
+      <Thread key={window.btoa(comment.post)} post={comment.post} comments={comment.comments}/>
+    ));
+
+    return content;
   }
 
   render() {
