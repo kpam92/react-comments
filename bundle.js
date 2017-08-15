@@ -22468,7 +22468,12 @@ var Thread = function (_React$Component) {
   function Thread(props) {
     _classCallCheck(this, Thread);
 
-    return _possibleConstructorReturn(this, (Thread.__proto__ || Object.getPrototypeOf(Thread)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Thread.__proto__ || Object.getPrototypeOf(Thread)).call(this, props));
+
+    _this.state = { commentComponent: 'no-show' };
+    _this.toggleComment = _this.toggleComment.bind(_this);
+
+    return _this;
   }
 
   _createClass(Thread, [{
@@ -22490,8 +22495,38 @@ var Thread = function (_React$Component) {
       return content;
     }
   }, {
+    key: 'renderCommentInput',
+    value: function renderCommentInput() {
+      var commentComponent = this.state.commentComponent;
+
+      if (commentComponent === 'no-show') {
+        return;
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', null),
+          _react2.default.createElement(
+            'button',
+            null,
+            '+'
+          )
+        );
+      }
+    }
+  }, {
+    key: 'toggleComment',
+    value: function toggleComment() {
+      if (this.state.commentComponent === 'no-show') {
+        this.setState({ commentComponent: 'show' });
+      } else {
+        this.setState({ commentComponent: 'no-show' });
+      };
+    }
+  }, {
     key: 'render',
     value: function render() {
+
       return _react2.default.createElement(
         'div',
         null,
@@ -22499,10 +22534,10 @@ var Thread = function (_React$Component) {
         this.props.post,
         _react2.default.createElement(
           'button',
-          null,
+          { onClick: this.toggleComment },
           'Add comment'
         ),
-        _react2.default.createElement('input', null),
+        this.renderCommentInput(),
         this.renderComments()
       );
     }

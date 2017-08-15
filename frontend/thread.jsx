@@ -3,7 +3,10 @@ import React from 'react';
 class Thread extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {commentComponent: 'no-show'}
+    this.toggleComment = this.toggleComment.bind(this);
+
   }
 
   addComment(){
@@ -22,13 +25,36 @@ class Thread extends React.Component {
     return content;
   }
 
+  renderCommentInput() {
+    const { commentComponent } = this.state;
+    if (commentComponent === 'no-show') {
+      return;
+    } else {
+      return (
+        <div>
+          <input></input>
+          <button>+</button>
+        </div>
+      )
+    }
+  }
+
+  toggleComment() {
+    if (this.state.commentComponent === 'no-show') {
+      this.setState({commentComponent: 'show'})
+    } else {
+      this.setState({commentComponent: 'no-show'})
+    };
+  }
+
   render() {
+
     return(
       <div>
         User123
         {this.props.post}
-        <button>Add comment</button>
-        <input></input>
+        <button onClick={this.toggleComment}>Add comment</button>
+        {this.renderCommentInput()}
         {this.renderComments()}
       </div>
     )
