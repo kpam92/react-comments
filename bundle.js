@@ -22471,15 +22471,13 @@ var Thread = function (_React$Component) {
     return _possibleConstructorReturn(this, (Thread.__proto__ || Object.getPrototypeOf(Thread)).call(this, props));
   }
 
-  // componentDidMount(){
-  //   this.renderComments();
-  // }
-
   _createClass(Thread, [{
+    key: 'addComment',
+    value: function addComment() {}
+  }, {
     key: 'renderComments',
     value: function renderComments() {
       var comments = this.props.comments;
-      // debugger;
 
       if (comments.length < 1) {
         return;
@@ -22504,6 +22502,7 @@ var Thread = function (_React$Component) {
           null,
           'Add comment'
         ),
+        _react2.default.createElement('input', null),
         this.renderComments()
       );
     }
