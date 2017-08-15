@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Main from './main';
 
 document.addEventListener('DOMContentLoaded',() => {
   const root = document.getElementById('content');
-  ReactDOM.render(<h1>hi</h1>,root)
+  ReactDOM.render(<Main/>,root)
 })

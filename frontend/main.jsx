@@ -8,8 +8,8 @@ const comments = [
 
 const Main = () => (
   <div>
-    <Thread post="Test Post" comments = comments/>
+    <Thread post="Test Post" comments={comments}/>
   </div>
 );
 
-export default App;
+export default Main;
