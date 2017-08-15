@@ -22471,13 +22471,40 @@ var Thread = function (_React$Component) {
     return _possibleConstructorReturn(this, (Thread.__proto__ || Object.getPrototypeOf(Thread)).call(this, props));
   }
 
+  // componentDidMount(){
+  //   this.renderComments();
+  // }
+
   _createClass(Thread, [{
+    key: 'renderComments',
+    value: function renderComments() {
+      var comments = this.props.comments;
+      // debugger;
+
+      if (comments.length < 1) {
+        return;
+      }
+
+      var content = comments.map(function (comment) {
+        return _react2.default.createElement(Thread, { key: window.btoa(comment.post), post: comment.post, comments: comment.comments });
+      });
+
+      return content;
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.post
+        'User123',
+        this.props.post,
+        _react2.default.createElement(
+          'button',
+          null,
+          'Add comment'
+        ),
+        this.renderComments()
       );
     }
   }]);
