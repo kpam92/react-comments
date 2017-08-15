@@ -2,7 +2,7 @@
 
 [Comment Thread live][host]
 
-[host]: https://kpam92.github.io/react-comments  /
+[host]: https://kpam92.github.io/react-comments/
 
 
 This Comment Thread is a single page React/Redux application of an example comment thread, inspired by Reddit's simple comment threads, where users can add comments to the original post, or any comment in the existing thread. This application is purely front end and added comments do not persist.
