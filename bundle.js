@@ -22425,9 +22425,9 @@ var _thread2 = _interopRequireDefault(_thread);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var comments = [{ "post": 'test', comments: [] }, { "post": 'test2', comments: [] }];
+var comments = [{ "post": 'I just realised he was able to control the roaches because brine contains sodium, which is part of what creates nerve impulses. Pretty clever.', comments: [] }, { "post": "It's hardly worth deconstructing the science of this episode, and I doubt they thought that far into it, even. His tongue wasn't even pickle.", comments: [] }];
 
-var post = "I'm glad they never gave Rick the ability to roll himself, since that wouldn't be possible for a living pickle without appendages. It would have made the episode much less clever if he could simply roll out of the sun or roll towards the roach.";
+var post = "I'm glad they never gave Rick the ability to roll himself, since that wouldn't be possible for a living pickle without appendages. It would have made the episode much less clever if he could simply roll out of the sun or roll towards the roach. This was a great episode.";
 
 var Main = function Main() {
   return _react2.default.createElement(
@@ -22561,14 +22561,19 @@ var Thread = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'col-md-12' },
+        { className: 'col-md-12 thread' },
         _react2.default.createElement(
           'div',
           { className: 'row comment-box' },
           _react2.default.createElement(
             'div',
             { className: 'col-md-12 username padding-bottom' },
-            'User123'
+            _react2.default.createElement('div', { className: 'avatar' }),
+            _react2.default.createElement(
+              'span',
+              null,
+              'rickAndMortyFan'
+            )
           ),
           _react2.default.createElement(
             'div',
@@ -22586,6 +22591,7 @@ var Thread = function (_React$Component) {
           ),
           this.renderCommentInput()
         ),
+        _react2.default.createElement('div', { className: 'col-md-2' }),
         _react2.default.createElement(
           'div',
           { className: 'col-md-10' },

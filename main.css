@@ -57,7 +57,9 @@ input[type="submit"] {
   padding-top: 10px;
   background: aliceblue;
 }
-
+.thread {
+  border-left: 1px solid #b9b9b9;
+}
 .comment-box {
   padding: 20px;
   /*border-left: 1px solid black;*/
@@ -65,6 +67,15 @@ input[type="submit"] {
 
 .username {
   font-size: 18px;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  background-image: url("http://res.cloudinary.com/dt5viyxyq/image/upload/v1502838506/pr_ytrhce.jpg");
+  background-size: cover;
+  margin-right: 0;
 }
 
 .comment {
@@ -73,4 +84,9 @@ input[type="submit"] {
 
 .add-comment {
   font-size: 12px;
+}
+
+.add-comment button {
+  background: #ffffff;
+  padding: 5px;
 }

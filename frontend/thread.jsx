@@ -72,10 +72,11 @@ class Thread extends React.Component {
   render() {
 
     return(
-      <div className='col-md-12'>
+      <div className='col-md-12 thread'>
         <div className="row comment-box">
           <div className="col-md-12 username padding-bottom">
-            User123
+            <div className="avatar"/>
+            <span>rickAndMortyFan</span>
           </div>
           <div className="col-md-12 padding-bottom">
             {this.props.post}
@@ -85,6 +86,7 @@ class Thread extends React.Component {
           </div>
           {this.renderCommentInput()}
         </div>
+        <div className="col-md-2"/>
         <div className="col-md-10">
           <div className="row">
             {this.renderComments()}
